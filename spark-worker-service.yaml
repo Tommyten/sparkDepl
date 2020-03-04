@@ -2,8 +2,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: spark-worker
+  name: spark-client
 spec:
   selector:
-    app: spark-worker
+    app: spark-client
   clusterIP: None
