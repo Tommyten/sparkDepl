@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Job
+metadata:
+  name: spark-driver
+  labels:
+    app: spark-driver
+spec:
+  selector:
+    matchLabels:
+      app: spark-driver
+  template:
+    metadata:
+      labels:
+        app: spark-driver
+    spec:
+      containers:
+      - name: spark-master
+        image: bde2020/spark-master:2.4.4-hadoop2.7
+        command:[]
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        - containerPort: 7077
+        - containerPort: 9999
