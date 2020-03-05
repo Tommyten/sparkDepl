@@ -20,3 +20,6 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8081
+        env:
+        - name: SPARK_MASTER
+          value: "spark://spark-master-0.spark-master.default.svc.cluster.local:7077,spark-master-1.spark-master.default.svc.cluster.local:7077"
